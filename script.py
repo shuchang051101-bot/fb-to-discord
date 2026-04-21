@@ -45,16 +45,8 @@ if latest_link and latest_link != data["last"]:
         json.dump(data, f)
 
         requests.post(WEBHOOK_URL, json={
-    "content": "📢 逆水寒更新",
-    "embeds": [
-        {
-            "title": entry.title,
-            "url": entry.link,
-            "description": "点击查看详情",
-            "color": 5814783
-        }
-    ]
-})
+            "content": f"📢 逆水寒更新：\n{entry.title}\n{entry.link}"
+        })
 
         with open(DATA_FILE, "w") as f:
             json.dump(data, f)
