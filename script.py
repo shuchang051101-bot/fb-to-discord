@@ -25,7 +25,7 @@ if feed.entries:
         data["last"] = entry.link
 
         requests.post(WEBHOOK_URL, json={
-            "content": f"📢 逆水寒更新：\n{entry.title}\n{entry.link}"
+            "content": f"📢 逆水寒更新啦：\n{entry.title}\n{entry.link}"
         })
 
         with open(DATA_FILE, "w") as f:
